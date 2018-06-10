@@ -1,0 +1,33 @@
+.textC, .boxC, .imageC, .iconC, .wrapperC{
+position: absolute;
+top: 0;
+left: 0;
+word-break: break-all;
+text-align: center;
+display: flex;
+align-items:center;
+box-sizing:border-box;
+transform-origin: 0% 0%;
+-webkit-transform-origin: 0% 0%;
+-webkit-font-smoothing: antialiased;
+}
+
+.catergy_wrapper{
+	width: 846rpx;
+	height: 403rpx;
+	top: 1336rpx;
+}
+
+.catergy_text{
+	width: 117rpx;
+	height: 71rpx;
+	left: 117rpx;
+	color: rgba(80, 80, 80, 1);
+	font-size: 35rpx;
+	line-height: 150%;
+}
+
+.text-content{
+width: 100%;
+}
+

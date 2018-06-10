@@ -1,0 +1,28 @@
+<view class='wrapperC'>
+  <scroll-view>
+    <view class='textC catergy_text'>
+        <text class='text-content'>正装</text>
+    </view>
+    <view class='textC catergy_text'>
+        <text class='text-content'>演出</text>
+    </view>
+    <view class='textC catergy_text'>
+        <text class='text-content'>礼服</text>
+    </view>
+    <view class='textC catergy_text'>
+        <text class='text-content'>毕业</text>
+    </view>
+    <view class='textC catergy_text'>
+        <text class='text-content'>节日</text>
+    </view>
+    <view class='textC catergy_text'>
+        <text class='text-content'>Cosplay</text>
+    </view>
+    <view class='textC catergy_text'>
+        <text class='text-content'>古装</text>
+    </view>
+    <view class='textC catergy_text'>
+        <text class='text-content'>民族</text>
+    </view>
+  </scroll-view>
+</view>
