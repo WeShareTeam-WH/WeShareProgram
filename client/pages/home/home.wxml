@@ -1,28 +1,23 @@
-<view class='wrapperC'>
-  <scroll-view>
-    <view class='textC catergy_text'>
-        <text class='text-content'>正装</text>
-    </view>
-    <view class='textC catergy_text'>
-        <text class='text-content'>演出</text>
-    </view>
-    <view class='textC catergy_text'>
-        <text class='text-content'>礼服</text>
-    </view>
-    <view class='textC catergy_text'>
-        <text class='text-content'>毕业</text>
-    </view>
-    <view class='textC catergy_text'>
-        <text class='text-content'>节日</text>
-    </view>
-    <view class='textC catergy_text'>
-        <text class='text-content'>Cosplay</text>
-    </view>
-    <view class='textC catergy_text'>
-        <text class='text-content'>古装</text>
-    </view>
-    <view class='textC catergy_text'>
-        <text class='text-content'>民族</text>
+<view class='section'>
+  <view class="search-input">
+    <input placeholder='搜索服装' placeholder-class="place-holder"></input>
+  </view>
+  <view class='swiper-wrapper'>
+    <swiper
+      indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+      interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+      <block wx:for="{{background}}" wx:key="*this">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" mode="aspectFill"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <scroll-view class='filter-wrapper'>
+    <view class="btn-area">
+      <navigator url="#" open-type="redirect" hover-class="navigator-hover">正装</navigator>
+      <navigator url="#" open-type="redirect" hover-class="navigator-hover">演出</navigator>
+      <navigator url="#" open-type="redirect" hover-class="navigator-hover">礼服</navigator>
     </view>
   </scroll-view>
 </view>

@@ -1,33 +1,49 @@
-.textC, .boxC, .imageC, .iconC, .wrapperC{
-position: absolute;
-top: 0;
-left: 0;
-word-break: break-all;
-text-align: center;
-display: flex;
-align-items:center;
-box-sizing:border-box;
-transform-origin: 0% 0%;
--webkit-transform-origin: 0% 0%;
--webkit-font-smoothing: antialiased;
+/**修改输入框样式**/
+.section .search-input input{
+  border:1px solid #ccc;
+  border-radius: 6px;
+  margin-left:5px;
+  margin-right:5px;
+  margin-bottom: 10px;
 }
 
-.catergy_wrapper{
-	width: 846rpx;
-	height: 403rpx;
-	top: 1336rpx;
+/**修改输入框提示信息样式样式**/
+.place-holder{
+color: #ccc;
+text-align: center
 }
 
-.catergy_text{
-	width: 117rpx;
-	height: 71rpx;
-	left: 117rpx;
-	color: rgba(80, 80, 80, 1);
-	font-size: 35rpx;
-	line-height: 150%;
+/**设置轮播框样式**/
+.swiper-wrapper {
+  display: block;
+  box-sizing: border-box;
+  padding: 0 5rpx;
+  width: 100%;
 }
 
-.text-content{
-width: 100%;
+.swiper-item{
+  display: block;
+  height: 150px;
 }
 
+/* 过滤条件样式控制  */
+.filter-wrapper {
+  height: 30px;
+}
+
+.filter-wrapper .btn-area {
+  position: absolute;
+  display: flex;
+  background: gainsboro;
+  width: 100%;
+}
+
+.filter-wrapper navigator {
+  margin: 5px 5px;
+  color: gray;
+}
+
+/** 修改默认的navigator点击态 **/
+.navigator-hover {
+  color:blue;
+}
