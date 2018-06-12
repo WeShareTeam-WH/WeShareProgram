@@ -1,16 +1,32 @@
-/**修改输入框样式**/
-.section .search-input input{
-  border:1px solid #ccc;
-  border-radius: 6px;
-  margin-left:5px;
-  margin-right:5px;
-  margin-bottom: 10px;
+@import "../../template/starsTemplate/starsTemplate.wxss";
+/* 过滤条件样式控制  */
+.filter-wrapper {
+  height: 30px;
+  white-space: nowrap;
+  width: 100%;
 }
 
-/**修改输入框提示信息样式样式**/
-.place-holder{
-color: #ccc;
-text-align: center
+.filter-wrapper .btn-area {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.filter-wrapper .btn-area icon {
+  margin-top:7px;
+  margin-left:5px;
+}
+
+.filter-wrapper navigator {
+  margin: 5px 5px;
+  color: gray;
+  display:inline-block;
+}
+
+/** 修改默认的navigator点击态 **/
+.navigator-hover {
+  color:blue;
 }
 
 /**设置轮播框样式**/
@@ -26,24 +42,7 @@ text-align: center
   height: 150px;
 }
 
-/* 过滤条件样式控制  */
-.filter-wrapper {
-  height: 30px;
-}
-
-.filter-wrapper .btn-area {
-  position: absolute;
-  display: flex;
-  background: gainsboro;
-  width: 100%;
-}
-
-.filter-wrapper navigator {
-  margin: 5px 5px;
-  color: gray;
-}
-
-/** 修改默认的navigator点击态 **/
-.navigator-hover {
-  color:blue;
+/** 商品展示样式**/
+.section .show-goods-wrapper {
+  margin: 5px;
 }
