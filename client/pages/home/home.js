@@ -24,16 +24,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options);
-    console.log(this);
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     var that = this;
     qcloud.request({
       url: config.service.homeUrl,
       login: true,
       success(result) {
-        console.log("zzzz:"+result.data.data);
         that.setData({
-          labelInfo: result.data.data
+          labelInfo: result.data
         })
       },
 
@@ -42,20 +53,6 @@ Page({
         console.log('request fail', error)
       }
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
   },
 
   /**

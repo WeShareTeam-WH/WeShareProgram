@@ -1,23 +1,47 @@
-<view class='section'>
-  <view class="search-input">
-    <input placeholder='搜索服装' placeholder-class="place-holder"></input>
-  </view>
-  <view class='swiper-wrapper'>
-    <swiper
-      indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
-      interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
-      <block wx:for="{{background}}" wx:key="*this">
-        <swiper-item>
-          <image src="{{item}}" class="slide-image" mode="aspectFill"/>
-        </swiper-item>
-      </block>
-    </swiper>
-  </view>
-  <scroll-view class='filter-wrapper'>
-    <view class="btn-area">
-      <navigator url="#" open-type="redirect" hover-class="navigator-hover">正装</navigator>
-      <navigator url="#" open-type="redirect" hover-class="navigator-hover">演出</navigator>
-      <navigator url="#" open-type="redirect" hover-class="navigator-hover">礼服</navigator>
+<import src="../../template/starsTemplate/starsTemplate.wxml" />
+<view class='page'>
+  <view class='section'>
+    <scroll-view class='filter-wrapper'>
+      <view class="btn-area">
+        <icon type="search" size="15"></icon>
+        <block wx:for="{{labelInfo}}" wx:for-item="item" wx:key="pro">
+          <navigator url="#" open-type="redirect" hover-class="navigator-hover">{{item.label}}</navigator>
+        </block>
+      </view>
+    </scroll-view>
+    <view class='swiper-wrapper'>
+      <swiper
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" mode="aspectFill"/>
+          </swiper-item>
+        </block>
+      </swiper>
     </view>
-  </scroll-view>
+    <view class='page__bd page__bd_spacing'>
+      <view class='title-price'>
+        <text>商品标题</text>
+        <text class='pull-right'>￥100/天</text>
+      </view>
+      <view class='weui-flex'>
+        <view class='weui-flex__item'>
+          <image src='../../image/test_imag/test1.jpg' style='width:100px;height:100px;'></image>
+        </view>
+        <view class='weui-flex__item'>
+          <image src='../../image/test_imag/test2.jpg' style='width:100px;height:100px;'></image>
+        </view>
+        <view class='weui-flex__item'>
+          <image src='../../image/test_imag/test3.jpg' style='width:100px;height:100px;'></image>
+        </view>
+      </view>
+      <view class='goods-des'>
+        <text>商品描述</text>
+        <view class='pull-right'>
+          <template is="starsTemplate" data="{{stars:5,score:5}}" />
+        </view>
+      </view>
+    </view>
+  </view>
 </view>

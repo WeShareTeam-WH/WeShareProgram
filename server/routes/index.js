@@ -2,7 +2,7 @@
  * ajax 服务路由集合
  */
 const router = require('koa-router')({
-  prefix: '/weshare'
+  prefix: '/weapp'
 })
 const controllers = require('../controllers')
 

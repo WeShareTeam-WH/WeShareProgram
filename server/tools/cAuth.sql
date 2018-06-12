@@ -105,12 +105,12 @@ INSERT INTO cAuth.goods_type set type='服装', add_time = now() on duplicate ke
 CREATE TABLE IF NOT EXISTS cAuth.goods_label (
   id int(11) NOT NULL AUTO_INCREMENT,
   goods_type_id int(11) NOT NULL,
-  label varchar(20) NOT NULL,
+  label varchar(20) NOT NULL COLLATE utf8mb4_unicode_ci,
   add_time datetime NOT NULL,
   deleted bit DEFAULT 0,
   PRIMARY KEY (id),
   FOREIGN KEY (goods_type_id) REFERENCES cAuth.goods_type(id)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO cAuth.goods_label set goods_type_id=1, label='正装', add_time = now()  on duplicate key update label='正装'; 
 INSERT INTO cAuth.goods_label set goods_type_id=1, label='演出服', add_time = now()  on duplicate key update label='演出服'; 
