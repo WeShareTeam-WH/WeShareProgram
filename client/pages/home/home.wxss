@@ -1,4 +1,5 @@
 @import "../../template/starsTemplate/starsTemplate.wxss";
+
 /* 过滤条件样式控制  */
 .filter-wrapper {
   height: 30px;
@@ -14,14 +15,17 @@
 }
 
 .filter-wrapper .btn-area icon {
-  margin-top:7px;
-  margin-left:5px;
+  margin-left: 10px;
+  margin-top: 6px;
 }
 
 .filter-wrapper navigator {
-  margin: 5px 5px;
   color: gray;
   display:inline-block;
+  font-size: 17px;
+  margin-left: 10px;
+  text-align: center;
+  vertical-align: middle;
 }
 
 /** 修改默认的navigator点击态 **/
@@ -33,16 +37,36 @@
 .swiper-wrapper {
   display: block;
   box-sizing: border-box;
-  padding: 0 5rpx;
   width: 100%;
 }
 
 .swiper-item{
   display: block;
-  height: 150px;
 }
 
-/** 商品展示样式**/
-.section .show-goods-wrapper {
-  margin: 5px;
+/* 商品列表  */
+.goods-list {
+  margin-top: 5px;
+}
+.goods-list .title-price {
+  margin: 0 5px;
+}
+
+.goods-list .title-price text {
+  font-size: 17px;
+}
+
+.goods-list .goods-images {
+  margin-left:5px;
+}
+
+.goods-list .weui-flex__item image {
+  width:95%;
+  height:100px;
+}
+
+.goods-list .goods-des {
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 15px;
 }
