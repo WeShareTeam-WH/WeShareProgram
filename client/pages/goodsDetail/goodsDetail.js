@@ -1,14 +1,11 @@
-var qcloud = require('../../vendor/wafer2-client-sdk/index')
-var config = require('../../config')
-var util = require('../../utils/util.js')
-
+var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    background: ['../../image/test_imag/img1.jpg', '../../image/test_imag/img2.jpg', '../../image/test_imag/img3.jpg'],
+    background: ['../../image/test_imag/goods1.jpg', '../../image/test_imag/goods2.jpg', '../../image/test_imag/goods3.jpg'],
     indicatorDots: true,
     vertical: false,
     autoplay: true,
@@ -17,42 +14,39 @@ Page({
     duration: 500,
     previousMargin: 0,
     nextMargin: 0,
-    labelInfo: {}
+    tabs: ["图文详情", "评论", "商品参数"],
+    activeIndex: 1,
+    sliderOffset: 0,
+    sliderLeft: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
+          sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
+        });
+      }
+    });
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this;
-    qcloud.request({
-      url: config.service.homeUrl,
-      login: true,
-      success(result) {
-        that.setData({
-          labelInfo: result.data
-        })
-      },
-
-      fail(error) {
-        util.showModel('请求失败', error)
-        console.log('request fail', error)
-      }
-    })
+    
   },
 
   /**
@@ -89,10 +83,10 @@ Page({
   onShareAppMessage: function () {
     
   },
-
-  viewGoodsDetail: function () {
-    wx.navigateTo({
-      url: '../goodsDetail/goodsDetail'
-    })
+  tabClick: function (e) {
+    this.setData({
+      sliderOffset: e.currentTarget.offsetLeft,
+      activeIndex: e.currentTarget.id
+    });
   }
 })

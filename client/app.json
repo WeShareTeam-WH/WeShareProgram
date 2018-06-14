@@ -5,7 +5,8 @@
     "pages/shoppingcar/shoppingcar",
     "pages/my/my",
     "pages/index/index",
-    "pages/addCgi/addCgi"
+    "pages/addCgi/addCgi",
+    "pages/goodsDetail/goodsDetail"
   ],
   "window":{
     "backgroundColor":"#F6F6F6",

@@ -18,31 +18,33 @@
         interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
         <block wx:for="{{background}}" wx:key="*this">
           <swiper-item>
-            <image src="{{item}}" class="slide-image" mode="scaleToFill"/>
+            <image src="{{item}}" style='height:100%;width:100%' class="slide-image" mode="scaleToFill"/>
           </swiper-item>
         </block>
       </swiper>
     </view>
     <view class='goods-list'>
-      <view class='title-price'>
-        <text>商品1</text>
-        <text class='pull-right'>￥100/天</text>
-      </view>
-      <view class='weui-flex goods-images'>
-        <view class='weui-flex__item'>
-          <image src='../../image/test_imag/test1.jpg'></image>
+      <view bindtap='viewGoodsDetail'>
+        <view class='title-price'>
+          <text>商品1</text>
+          <text class='pull-right'>￥100/天</text>
         </view>
-        <view class='weui-flex__item'>
-          <image src='../../image/test_imag/test2.jpg'></image>
+        <view class='weui-flex goods-images'>
+          <view class='weui-flex__item'>
+            <image src='../../image/test_imag/test1.jpg'></image>
+          </view>
+          <view class='weui-flex__item'>
+            <image src='../../image/test_imag/test2.jpg'></image>
+          </view>
+          <view class='weui-flex__item'>
+            <image src='../../image/test_imag/test3.jpg'></image>
+          </view>
         </view>
-        <view class='weui-flex__item'>
-          <image src='../../image/test_imag/test3.jpg'></image>
-        </view>
-      </view>
-      <view class='goods-des'>
-        <text>商品描述</text>
-        <view class='pull-right'>
-          <template is="starsTemplate" data="{{stars:5,score:4}}" />
+        <view class='goods-des'>
+          <text>商品描述</text>
+          <view class='pull-right'>
+            <template is="starsTemplate" data="{{stars:5,score:4}}" />
+          </view>
         </view>
       </view>
 
