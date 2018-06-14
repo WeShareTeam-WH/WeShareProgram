@@ -15,7 +15,7 @@ Page({
     previousMargin: 0,
     nextMargin: 0,
     tabs: ["图文详情", "评论", "商品参数"],
-    activeIndex: 1,
+    activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0
   },
