@@ -1,7 +1,8 @@
 <import src="../../template/starsTemplate/starsTemplate.wxml" />
+
 <view class='page'>
-  <view class='section'>
-    <scroll-view class='filter-wrapper'>
+  <view class='page__hd'>
+    <scroll-view class='filter-wrapper' scroll-x="true">
       <view class="btn-area">
         <icon type="search" size="15"></icon>
         <block wx:for="{{labelInfo}}" wx:for-item="item" wx:key="pro">
@@ -9,37 +10,85 @@
         </block>
       </view>
     </scroll-view>
-    <view class='swiper-wrapper'>
+  </view>
+  <view class='page__bd page__bd_spacing'>
+    <view class='swiper-wrapper' style='width:100%;'>
       <swiper
         indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
         interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
         <block wx:for="{{background}}" wx:key="*this">
           <swiper-item>
-            <image src="{{item}}" class="slide-image" mode="aspectFill"/>
+            <image src="{{item}}" style='height:100%;width:100%' class="slide-image" mode="scaleToFill"/>
           </swiper-item>
         </block>
       </swiper>
     </view>
-    <view class='page__bd page__bd_spacing'>
+    <view class='goods-list'>
+      <view bindtap='viewGoodsDetail'>
+        <view class='title-price'>
+          <text>商品1</text>
+          <text class='pull-right'>￥100/天</text>
+        </view>
+        <view class='weui-flex goods-images'>
+          <view class='weui-flex__item'>
+            <image src='../../image/test_imag/test1.jpg'></image>
+          </view>
+          <view class='weui-flex__item'>
+            <image src='../../image/test_imag/test2.jpg'></image>
+          </view>
+          <view class='weui-flex__item'>
+            <image src='../../image/test_imag/test3.jpg'></image>
+          </view>
+        </view>
+        <view class='goods-des'>
+          <text>商品描述</text>
+          <view class='pull-right'>
+            <template is="starsTemplate" data="{{stars:5,score:4}}" />
+          </view>
+        </view>
+      </view>
+
       <view class='title-price'>
-        <text>商品标题</text>
+        <text>商品2</text>
         <text class='pull-right'>￥100/天</text>
       </view>
-      <view class='weui-flex'>
+      <view class='weui-flex goods-images'>
         <view class='weui-flex__item'>
-          <image src='../../image/test_imag/test1.jpg' style='width:100px;height:100px;'></image>
+          <image src='../../image/test_imag/test1.jpg'></image>
         </view>
         <view class='weui-flex__item'>
-          <image src='../../image/test_imag/test2.jpg' style='width:100px;height:100px;'></image>
+          <image src='../../image/test_imag/test2.jpg'></image>
         </view>
         <view class='weui-flex__item'>
-          <image src='../../image/test_imag/test3.jpg' style='width:100px;height:100px;'></image>
+          <image src='../../image/test_imag/test3.jpg'></image>
         </view>
       </view>
       <view class='goods-des'>
         <text>商品描述</text>
         <view class='pull-right'>
-          <template is="starsTemplate" data="{{stars:5,score:5}}" />
+          <template is="starsTemplate" data="{{stars:5,score:4}}" />
+        </view>
+      </view>
+
+      <view class='title-price'>
+        <text>商品3</text>
+        <text class='pull-right'>￥100/天</text>
+      </view>
+      <view class='weui-flex goods-images'>
+        <view class='weui-flex__item'>
+          <image src='../../image/test_imag/test1.jpg'></image>
+        </view>
+        <view class='weui-flex__item'>
+          <image src='../../image/test_imag/test2.jpg'></image>
+        </view>
+        <view class='weui-flex__item'>
+          <image src='../../image/test_imag/test3.jpg'></image>
+        </view>
+      </view>
+      <view class='goods-des'>
+        <text>商品描述</text>
+        <view class='pull-right'>
+          <template is="starsTemplate" data="{{stars:5,score:4}}" />
         </view>
       </view>
     </view>

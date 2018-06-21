@@ -1,0 +1,37 @@
+<view class='page'>
+  <view class='page_bd' style='background-color: gainsboro;'>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+            <image src="../../image/test_imag/goods1.jpg" style="width: 50px; height: 50px; display: block"/>
+        </view>
+        <view class="weui-cell__bd">
+            <view>商品名+已选属性</view>
+            <view style="font-size: 13px;color: red;">100元</view>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_access">
+        <view class="weui-cell__bd">
+            <view style="display: inline-block; vertical-align: middle;">赠送</view>
+            <view class="weui-badge" style="margin-left: 5px;">10积分</view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-panel weui-panel_access" style="margin-top:5px;">
+      <view class="weui-panel__bd">
+        <view class="commodity_attr_list">
+          <view class="attr_box" wx:for="{{attrValueList}}" wx:for-item="attrValueObj" wx:for-index="attrIndex">  
+            <view class="attr_name">{{attrValueObj.attrKey}}</view>  
+            <view class="attr_value_box">  
+              <view class="attr_value {{attrIndex==firstIndex || attrValueObj.attrValueStatus[valueIndex]?(value==attrValueObj.selectedValue?'attr_value_active':''):'attr_value_disabled'}}" bindtap="selectAttrValue" data-status="{{attrValueObj.attrValueStatus[valueIndex]}}"  
+              data-value="{{value}}" data-key="{{attrValueObj.attrKey}}" data-index="{{attrIndex}}" data-selectedvalue="{{attrValueObj.selectedValue}}" wx:for="{{attrValueObj.attrValues}}" wx:for-item="value" wx:for-index="valueIndex">{{value}}                </view>  
+            </view>  
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>  
+    <button class="weui-btn" style="position:fixed; bottom:0;width: 100%;" type="primary" bindtap="submit">确定</button>  
+  </view>
+</view>

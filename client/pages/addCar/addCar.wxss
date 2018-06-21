@@ -1,0 +1,53 @@
+.commodity_attr_list {  
+  background: #fff;  
+  padding: 0 32rpx;  
+  font-size: 32rpx;  
+  overflow: hidden;  
+  width: 100%;  
+}  
+
+.attr_box {  
+  width: 100%;  
+  overflow: hidden;  
+  border-bottom: 1rpx solid #ececec;  
+}  
+
+.attr_name {  
+  width: 20%;  
+  float: left;  
+  padding: 15rpx 0;  
+}  
+
+.attr_value_box {  
+  width: 80%;  
+  float: left;  
+  padding: 15rpx 0;  
+  overflow: hidden;  
+}  
+  
+.attr_value {  
+  float: left;  
+  padding: 0 10rpx;  
+  margin: 0 10rpx;  
+  border: 1rpx solid #ececec;  
+}  
+ 
+.attr_value_active {  
+  background: #FFCC00;  
+  border-radius: 10rpx;  
+  color: #fff;  
+  padding: 0 10rpx;  
+}  
+
+.attr_value_disabled {  
+  color: #ccc;  
+}  
+
+.btn {  
+  margin-top: 15px;  
+  background-color:#FFCC00;  
+  color: #fff;  
+}  
+.btn:first-child {  
+  margin-top: 0;  
+}  
