@@ -268,5 +268,11 @@ Page({
       carList: carList,
       totalPrice: total.toFixed(2)
     });
+  },
+
+  toBuy () {
+    wx.navigateTo({
+      url: "/pages/order/order"
+    });
   }
 })
