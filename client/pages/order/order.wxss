@@ -1,0 +1,160 @@
+.order-wrapper {
+    padding-left: 25rpx;
+    padding-right: 25rpx;
+    padding-top: 5rpx;
+    font-size: 30rpx;
+}
+
+.order-wrapper .address-wrapper {
+    padding: 20rpx 10rpx;
+    border:#efefef solid 1px;
+}
+
+.order-wrapper .address-wrapper .address {
+    font-size: 25rpx;
+    color: #555;
+}
+
+.personal-info .name {
+    margin-right: 30rpx;
+}
+
+.payment {
+    margin: 20rpx 0;
+    border:#efefef solid 1px;
+    padding: 10rpx 10rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payment .tip {
+    display: inline-block;
+    font-size: 25rpx;
+    color: #555;
+}
+
+.payment .payment-selected {
+    display: inline-block;
+    font-size: 26rpx;
+}
+
+.goods-container {
+    margin-bottom: 120rpx;
+}
+
+.goods-wrapper {
+    margin:20rpx 0;
+    padding: 20rpx 10rpx;
+    border:#efefef solid 1px;
+}
+
+.small-font {
+    font-size: 25rpx;
+    color: #555;
+}
+
+
+.goods-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.goods-image, .goods-name {
+    display: inline-block;
+}
+
+.goods-image {
+    width: 30%;
+    height: 200rpx;
+}
+
+.goods-desc {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.goods-desc .desc {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.goods-desc .price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price-text {
+    font-size: 30rpx;
+    color: red;
+}
+
+.delivery {
+    margin: 20rpx 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.delivery-tip {
+    color: #555;
+}
+
+.delivery-method {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.comments-text {
+    border:#efefef solid 1px;
+    border-radius: 10px;
+    padding: 10rpx 15rpx;
+}
+
+.subTotal {
+    margin: 20rpx 0;
+    padding: 0 10rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.subTotal-price {
+    font-size: 30rpx;
+    color: red;
+}
+
+.submit-wrapper {
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25rpx;
+    padding-right: 0;
+    background-color: #fff;
+}
+
+.total-price-text {
+    color: red;
+    font-size: 50rpx;
+}
+
+.submit-btn {
+    background-color: rgb(253, 61, 61);
+    color: #fff;
+    height: 100%;
+    line-height: 100rpx;
+    width:200rpx;
+    text-align:center;
+}

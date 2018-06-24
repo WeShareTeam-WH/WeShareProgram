@@ -1,0 +1,54 @@
+<view class="order-wrapper">
+    <view class="address-wrapper">
+        <view class="personal-info">
+            <text class="name">{{ personalInfo.name }}</text>
+            <text>{{ personalInfo.phone }}</text>
+        </view>
+        <view class="address">
+            <text>{{ personalInfo.address }}</text>
+        </view>
+    </view>
+
+    <view class="payment">
+        <text class="tip">支付方式</text>
+        <view class="payment-selected">
+            <text>{{ payment }}</text>
+        </view>
+    </view>
+
+    <view class="goods-container">
+        <view class="goods-wrapper" wx:for="{{ goods }}" wx:key="id" wx:for-item="goodsItem">
+            <view class="goods-info">
+                <image class="goods-image" src="{{ goodsItem.imageSrc }}"/>
+                <view class="goods-desc">
+                    <text class="desc">{{ goodsItem.name }}</text>
+                    <text class="desc small-font">颜色:{{ goodsItem.color }}</text>
+                    <text class="desc small-font">尺寸:{{ goodsItem.size }}</text>
+                    <view class="price">
+                        <text class="price-text">¥{{ goodsItem.price }}</text>
+                        <text>×{{ goodsItem.count }}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="delivery">
+                <text class="delivery-tip">配送</text>
+                <view class="delivery-method">
+                    <text class="text-right">{{ goodsItem.delivery.method }}</text>
+                    <text class="text-right">{{ goodsItem.delivery.time }}</text>
+                </view>
+            </view>
+            <view class="subTotal">
+                <text class="subTotal-tip">小计</text>
+                <text class="subTotal-price">¥{{ goodsItem.subTotal }}</text>
+            </view>
+            <view class="comments">
+                <input class="comments-text" data-goodsId="{{ goodsItem.id }}" placeholder="留言" bindinput="bindInputComments" />
+            </view>
+        </view>
+    </view>
+
+    <view class="submit-wrapper">
+        <text class="total-price-text">¥{{ totalPrice }}</text>
+        <view class="submit-btn" bind:tap="submitOrder">提交订单</view>
+    </view>
+</view>
