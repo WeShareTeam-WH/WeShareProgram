@@ -2,6 +2,7 @@
     padding-left: 25rpx;
     padding-right: 25rpx;
     padding-top: 5rpx;
+    padding-bottom: 120rpx;
     font-size: 30rpx;
 }
 
@@ -37,10 +38,6 @@
 .payment .payment-selected {
     display: inline-block;
     font-size: 26rpx;
-}
-
-.goods-container {
-    margin-bottom: 120rpx;
 }
 
 .goods-wrapper {
