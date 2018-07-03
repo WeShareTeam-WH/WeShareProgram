@@ -9,7 +9,7 @@ const CONF = {
     appSecret: '27cbc7a865260ff7d3c50a49fc60625c',
 
     // 是否使用腾讯云代理登录小程序
-    useQcloudLogin: true,
+    useQcloudLogin: false,
 
     /**
      * MySQL 配置，用来存储 session 和用户信息
@@ -20,8 +20,8 @@ const CONF = {
         host: 'localhost',
         port: 3306,
         user: 'root',
-        db: 'cAuth',
-        pass: 'wx394bb1e0bfea5cb8',
+        db: 'wesharedb',
+        pass: '111111',
         char: 'utf8mb4'
     },
 
@@ -42,4 +42,4 @@ const CONF = {
     wxMessageToken: 'abcdefgh'
 }
 
-module.exports = CONF
+module.exports = process.env.NODE_ENV === 'dev' ? Object.assign({}, CONF, require('./config.local')) : CONF;

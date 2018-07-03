@@ -1,4 +1,4 @@
-const uuid = require('node-uuid')
+// const uuid = require('node-uuid')
 
 
 // 连接数据库
@@ -16,17 +16,17 @@ const DB = require('knex')({
   }
 })
 
-var id = uuid.v1()
-  // 增
-  var book = {
-    id: id,
-    name: "冰与火之歌",
-    price: 88
-  }
-  await DB("Book").insert(book)
+// var id = uuid.v1()
+//   // 增
+//   var book = {
+//     id: id,
+//     name: "冰与火之歌",
+//     price: 88
+//   }
+  //await DB("Book").insert(book)
   // 查
-  var res = await mysql("Book").where({ id }).first()
-  console.log(res)
+  //var res = await mysql("Book").where({ id }).first()
+ // console.log(res)
   // 改
   // await mysql("Book").update({ price: 66 }).where({ id })
   // 删
