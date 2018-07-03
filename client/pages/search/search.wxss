@@ -18,8 +18,8 @@ page{
   /*主盒子设置背景色为灰色*/  
   background: #f5f5f5;  
   text-align: center;  
-  left:-120px;
-position:relative;
+  left: 0;
+  position: absolute;
 
 }  
 /*左侧栏list的item*/  
