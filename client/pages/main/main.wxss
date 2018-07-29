@@ -1,0 +1,23 @@
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}
+
+/* 设置时下热潮等子模块图片廊右边距 */
+.body-gallery image{
+  margin-right: 9px;
+}
+
+.body-gallery navigator:last-child{
+  width:150px;
+}
+/* 清除时下热潮等子模块图片廊最后一张图片右边距 */
+.body-gallery navigator:last-child image{
+  margin-right: 0px;
+}
