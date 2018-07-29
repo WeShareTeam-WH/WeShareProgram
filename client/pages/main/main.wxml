@@ -1,0 +1,148 @@
+<view class="page">
+  <view id='topAnchor' class="page__bd" style="z-index:1000;">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">搜索</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+    <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <!-- 轮播图 -->
+  <view class='page__bd page__bd_spacing'>
+    <view class='swiper-wrapper' style='width:100%;'>
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <image src="{{item}}" style='height:100%;width:100%' class="slide-image" mode="aspectFit" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <!-- 轮播图end -->
+  <!-- 租赁流程 -->
+  <view class="page-bd">
+    <view style="color:#54CEC4; width:80rpx; display:inline-block;font-size:16px">租赁流程</view>
+    <block wx:for="{{procedure}}" wx:key="*this">
+      <view id="index-procedure+{{item.id}}" style="display:inline-block; margin:0px 8px">
+        <view style="width:50px;height:30px;">
+          <image src="{{item.imgUrl}}" style="width:16px;height:16px;margin:0 auto;display:block;position:relative;top:8px" mode="center"></image>
+          <!-- <view style="width:16px;height:16px;background:url('../../image/rent_procedure/order.png')"></view> -->
+        </view>
+        <view style="width:50px;font-size:12px;color:#54CEC4;text-align:center">
+          <label>{{item.text}}</label>
+        </view>
+      </view>
+      <image wx:if="{{index+1 !== procedure.length}}" src='../../image/main/rent_procedure/right_light.png' style="width:22px;height:22px;position:relative;top:-9px" mode="center"></image>
+    </block>
+  </view>
+  <!-- 租赁流程end -->
+
+  <!-- 服装分类 -->
+  <view class="page__bd">
+    <view class="weui-grids" style="border:none;">
+      <block wx:for="{{category}}" wx:key="*this">
+        <navigator url="" class="weui-grid" hover-class="weui-grid_active" style="width:{{100/category.length+'%'}}; border:none;">
+          <image class="weui-grid__icon" src="{{item.imgUrl}}" />
+          <view class="weui-grid__label">{{item.text}}</view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+  <!-- 服装分类end -->
+
+
+  <!-- 时下热潮等模块 -->
+  <block wx:for="{{subModule}}" wx:for-item="module" wx:key="*this">
+    <view style="margin:8px">
+      <view class="index-module-header" style="font-size:16px">
+        <view class="header-left" style="display:inline-block; border-left:2px solid #1D535B">
+          <view class="title" style="font-size:16px; color:#1D535B">{{module.title}}</view>
+          <view class="sub-title" style="font-size:8px; color:#1D535B">{{module.subTitle}}</view>
+        </view>
+        <view class="header-right" style="display:inline-block; float:right; position:relative; top:5px;">
+          <navigator url="">更多></navigator>
+        </view>
+      </view>
+      <view class="index-module-body">
+        <view class="main-pic">
+          <image src="{{module.mainImgUrl}}" style="width:100%;" mode="widthFix"></image>
+        </view>
+        <scroll-view scroll-x style="white-space: nowrap;" class="body-gallery">
+          <navigator url="" style="font-size:12px; color:#1D535B; display:inline-block;" wx:for="{{module.galleryImage}}" wx:key="*this">
+            <image src="{{item.imgUrl}}" mode="widthFix" style="width:150px;"></image>
+            <view style="width:150px;">
+              <view>{{item.desc}}</view>
+              <view style="color:#54CEC4; display:inline-block;">{{item.price}}</view>
+              <view style='display:inline-block; float:right'>{{item.size}}</view>
+            </view>
+          </navigator>
+        </scroll-view>
+      </view>
+    </view>
+  </block>
+  <!-- 时下热潮等模块end -->
+
+  <!-- 为您推荐 -->
+  <view style="margin:8px">
+    <view class="index-module-header" style="font-size:16px">
+      <view class="header-left" style="display:inline-block; border-left:2px solid #1D535B">
+        <view class="title" style="font-size:16px; color:#1D535B">{{recommend.title}}</view>
+        <view class="sub-title" style="font-size:8px; color:#1D535B">{{recommend.subTitle}}</view>
+      </view>
+    </view>
+    <view class="index-module-body">
+      <navigator url="" style="font-size:12px; color:#1D535B; display:inline-block; width:49%; margin-right:{{index%2===0?2:0}}%;" wx:for="{{recommend.galleryImage}}" wx:key="*this">
+        <image src="{{item.imgUrl}}" mode="widthFix" style="width:100%;"></image>
+        <view style="width:98%;">
+          <view>{{item.desc}}</view>
+          <view style="color:#54CEC4; display:inline-block;">{{item.price}}</view>
+          <view style='display:inline-block; float:right'>{{item.size}}</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+
+  <view class="weui-loadmore" style="color:#54CEC4">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">美衣加载中...</view>
+  </view>
+  <!-- 为您推荐end -->
+
+
+  <!-- 底线 -->
+  <view style="text-align:center;color:#54CEC4;font-size:14px;">------------呀！你碰到我的底线了----------</view>
+  <!-- 底线end -->
+</view>

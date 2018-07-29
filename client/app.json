@@ -1,5 +1,6 @@
 {
-  "pages":[
+  "pages": [
+    "pages/main/main",
     "pages/home/home",
     "pages/search/search",
     "pages/shoppingcar/shoppingcar",
@@ -8,40 +9,52 @@
     "pages/addCgi/addCgi",
     "pages/goodsDetail/goodsDetail",
     "pages/addCar/addCar",
-    "pages/order/order"
+    "pages/order/order",
+    "pages/category/category",
+    "pages/collect/collect",
+    "pages/bag/bag",
+    "pages/mine/mine"
   ],
-  "window":{
-    "backgroundColor":"#F6F6F6",
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "享衣记",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "color":"#1D535B",
+    "selectedColor": "#54CEC4",
     "list": [
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/main/main",
         "text": "首页",
-        "iconPath": "./image/tabar_icon/home.png",
-        "selectedIconPath": "./image/tabar_icon/home_selected.png"
+        "iconPath": "./image/tabar_icon/main.png",
+        "selectedIconPath": "./image/tabar_icon/main_active.png"
       },
       {
-        "pagePath": "pages/search/search",
+        "pagePath": "pages/category/category",
         "text": "分类",
-        "iconPath": "./image/tabar_icon/search.png",
-        "selectedIconPath": "./image/tabar_icon/search_selected.png"
+        "iconPath": "./image/tabar_icon/category.png",
+        "selectedIconPath": "./image/tabar_icon/category_active.png"
       },
       {
-        "pagePath": "pages/shoppingcar/shoppingcar",
-        "text": "购物车",
-        "iconPath": "./image/tabar_icon/shoppingcar.png",
-        "selectedIconPath": "./image/tabar_icon/shoppingcar_selected.png"
+        "pagePath": "pages/collect/collect",
+        "text": "收藏",
+        "iconPath": "./image/tabar_icon/collect.png",
+        "selectedIconPath": "./image/tabar_icon/collect_active.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/bag/bag",
+        "text": "衣袋",
+        "iconPath": "./image/tabar_icon/bag.png",
+        "selectedIconPath": "./image/tabar_icon/bag_active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
         "text": "我的",
-        "iconPath": "./image/tabar_icon/my.png",
-        "selectedIconPath": "./image/tabar_icon/my_selected.png"
+        "iconPath": "./image/tabar_icon/mine.png",
+        "selectedIconPath": "./image/tabar_icon/mine_active.png"
       }
     ]
   },
