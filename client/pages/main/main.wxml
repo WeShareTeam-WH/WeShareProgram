@@ -1,5 +1,6 @@
 <view class="page">
-  <view id='topAnchor' class="page__bd" style="z-index:1000;">
+  <!-- 搜索框 -->
+  <!-- <view id='topAnchor' class="page__bd" style="z-index:1000;">
     <view class="weui-search-bar">
       <view class="weui-search-bar__form">
         <view class="weui-search-bar__box">
@@ -10,35 +11,33 @@
           </view>
         </view>
         <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
-          <icon class="weui-icon-search" type="search" size="14"></icon>
-          <view class="weui-search-bar__text">搜索</view>
+          <view style="display:inline-block;">地理位置</view>
+          <view  style="display:inline-block;">
+            <icon class="weui-icon-search" type="search" size="14"></icon>
+            <view class="weui-search-bar__text">搜索</view>
+          </view>
         </label>
       </view>
       <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
     </view>
-    <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
-      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">
-          <view>实时搜索文本</view>
-        </view>
-      </navigator>
-      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">
-          <view>实时搜索文本</view>
-        </view>
-      </navigator>
-      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">
-          <view>实时搜索文本</view>
-        </view>
-      </navigator>
-      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">
-          <view>实时搜索文本</view>
-        </view>
-      </navigator>
+  </view> -->
+
+
+  <view id="index-search-box" style="position:fixed; z-index:100; width:100%;background-color:{{searchBoxBgc}}">
+    <view style="border-radius:13px;  background-color:rgba(220,220,220,0.5); margin: 10px; padding: 0px 10px; display:flex; flex-flow:row; align-items:center; color:rgb(92,92,92)">
+      <view style="">
+        <image src='../../image/main/location.png' style="width:22px; display:block;" mode="widthFix"></image>
+      </view>
+      <view style=''>
+        <text style="border-right:2px solid rgb(92,92,92); margin-right:5px; padding-right:5px;">洪山区</text>
+      </view>
+      <view style="">
+        <input type='text' placeholder='搜索' style=""></input>
+      </view>
     </view>
   </view>
+  <!-- 搜索框end -->
+
   <!-- 轮播图 -->
   <view class='page__bd page__bd_spacing'>
     <view class='swiper-wrapper' style='width:100%;'>
@@ -52,20 +51,22 @@
     </view>
   </view>
   <!-- 轮播图end -->
+
   <!-- 租赁流程 -->
-  <view class="page-bd">
-    <view style="color:#54CEC4; width:80rpx; display:inline-block;font-size:16px">租赁流程</view>
+  <view class="page-bd" style="margin: 10px 5px 0px 5px;">
+    <view style="color:#54CEC4; width:12%; display:inline-block;font-size:16px; text-align:center;">
+      <text>租赁\n流程</text>
+    </view>
     <block wx:for="{{procedure}}" wx:key="*this">
-      <view id="index-procedure+{{item.id}}" style="display:inline-block; margin:0px 8px">
-        <view style="width:50px;height:30px;">
-          <image src="{{item.imgUrl}}" style="width:16px;height:16px;margin:0 auto;display:block;position:relative;top:8px" mode="center"></image>
-          <!-- <view style="width:16px;height:16px;background:url('../../image/rent_procedure/order.png')"></view> -->
+      <view id="index-procedure+{{item.id}}" style="display:inline-block; width:16%">
+        <view style="width:100%;height:30px;">
+          <image src="{{item.imgUrl}}" style="width:18px;height:18px;margin:0 auto;display:block;position:relative;top:8px" mode="center"></image>
         </view>
-        <view style="width:50px;font-size:12px;color:#54CEC4;text-align:center">
+        <view style="width:100%;font-size:12px;color:#54CEC4;text-align:center">
           <label>{{item.text}}</label>
         </view>
       </view>
-      <image wx:if="{{index+1 !== procedure.length}}" src='../../image/main/rent_procedure/right_light.png' style="width:22px;height:22px;position:relative;top:-9px" mode="center"></image>
+      <image wx:if="{{index+1 !== procedure.length}}" src='../../image/main/rent_procedure/right_light.png' style="width:8%;height:22px;position:relative;top:-9px" mode="center"></image>
     </block>
   </view>
   <!-- 租赁流程end -->
@@ -76,7 +77,7 @@
       <block wx:for="{{category}}" wx:key="*this">
         <navigator url="" class="weui-grid" hover-class="weui-grid_active" style="width:{{100/category.length+'%'}}; border:none;">
           <image class="weui-grid__icon" src="{{item.imgUrl}}" />
-          <view class="weui-grid__label">{{item.text}}</view>
+          <view class="weui-grid__label" style="color:#1D535B">{{item.text}}</view>
         </navigator>
       </block>
     </view>
@@ -84,13 +85,13 @@
   <!-- 服装分类end -->
 
 
-  <!-- 时下热潮等模块 -->
-  <block wx:for="{{subModule}}" wx:for-item="module" wx:key="*this">
+  <!-- 模板(时下热潮、民国时代、Cosplay等模块共用) -->
+  <template name='index-subModule'>
     <view style="margin:8px">
       <view class="index-module-header" style="font-size:16px">
         <view class="header-left" style="display:inline-block; border-left:2px solid #1D535B">
-          <view class="title" style="font-size:16px; color:#1D535B">{{module.title}}</view>
-          <view class="sub-title" style="font-size:8px; color:#1D535B">{{module.subTitle}}</view>
+          <view class="title" style="font-size:16px; color:#1D535B">{{title}}</view>
+          <view class="sub-title" style="font-size:8px; color:#1D535B">{{subTitle}}</view>
         </view>
         <view class="header-right" style="display:inline-block; float:right; position:relative; top:5px;">
           <navigator url="">更多></navigator>
@@ -98,10 +99,10 @@
       </view>
       <view class="index-module-body">
         <view class="main-pic">
-          <image src="{{module.mainImgUrl}}" style="width:100%;" mode="widthFix"></image>
+          <image src="{{mainImgUrl}}" style="width:100%;" mode="widthFix"></image>
         </view>
         <scroll-view scroll-x style="white-space: nowrap;" class="body-gallery">
-          <navigator url="" style="font-size:12px; color:#1D535B; display:inline-block;" wx:for="{{module.galleryImage}}" wx:key="*this">
+          <navigator url="" style="font-size:12px; color:#1D535B; display:inline-block;" wx:for="{{galleryImage}}" wx:key="*this">
             <image src="{{item.imgUrl}}" mode="widthFix" style="width:150px;"></image>
             <view style="width:150px;">
               <view>{{item.desc}}</view>
@@ -112,11 +113,54 @@
         </scroll-view>
       </view>
     </view>
-  </block>
-  <!-- 时下热潮等模块end -->
+  </template>
+  <!-- 模板(时下热潮、民国时代、Cosplay等模块共用)end -->
+
+  <!-- 时下热潮 -->
+  <template is="index-subModule" data="{{...fashion}}"></template>
+  <!-- 时下热潮end -->
+
+  <!-- 试衣间 -->
+  <view style="margin:8px">
+    <view class="index-module-header" style="font-size:16px;">
+      <view class="header-left" style="display:inline-block; border-left:2px solid #1D535B">
+        <view class="title" style="font-size:16px; color:#1D535B">{{clothesShow.title}}</view>
+        <view class="sub-title" style="font-size:8px; color:#1D535B">{{clothesShow.subTitle}}</view>
+      </view>
+      <view class="header-right" style="display:inline-block; float:right; position:relative; top:5px; color:#1D535B">
+        <navigator url="">更多></navigator>
+      </view>
+    </view>
+    <view class="index-module-body">
+      <scroll-view scroll-x style="white-space: nowrap;" class="body-gallery">
+        <navigator url="" style="font-size:12px; color:#1D535B; display:inline-block;" wx:for="{{clothesShow.galleryImage}}" wx:key="*this">
+          <image src="{{item.imgUrl}}" mode="widthFix" style="width:150px;"></image>
+          <view style="width:150px;">
+            <image src='{{item.portraitUrl}}' mode="widthFix" style="width:20%; border-radius:15px; margin-right:0px;"></image>
+            <view style="display:inline-block; width:75%; padding-left:5%;">
+              <view>{{item.customerNickname}}</view>
+              <image src='../../image/main/collected.png' mode="widthFix" style="width:12%; border-radius:15px; margin-right:3px;"></image>
+              <view style="color:#54CEC4; display:inline-block;">{{item.collection}}</view>
+              <view style='display:inline-block; float:right'>{{item.stature}},{{item.size}}</view>
+            </view>
+
+          </view>
+        </navigator>
+      </scroll-view>
+    </view>
+  </view>
+  <!-- 试衣间end -->
+
+  <!-- 民国时代 -->
+  <template is="index-subModule" data="{{...minguo}}"></template>
+  <!-- 民国时代end -->
+
+  <!-- Cosplay -->
+  <template is="index-subModule" data="{{...cosplay}}"></template>
+  <!-- Cosplay end -->
 
   <!-- 为您推荐 -->
-  <view style="margin:8px">
+  <view id='recommend' style="margin:8px">
     <view class="index-module-header" style="font-size:16px">
       <view class="header-left" style="display:inline-block; border-left:2px solid #1D535B">
         <view class="title" style="font-size:16px; color:#1D535B">{{recommend.title}}</view>
@@ -124,8 +168,9 @@
       </view>
     </view>
     <view class="index-module-body">
-      <navigator url="" style="font-size:12px; color:#1D535B; display:inline-block; width:49%; margin-right:{{index%2===0?2:0}}%;" wx:for="{{recommend.galleryImage}}" wx:key="*this">
+      <navigator url="" style="font-size:12px; color:#1D535B; display:inline-block; width:49%; position:relative;" wx:for="{{recommend.galleryImage}}" wx:key="*this">
         <image src="{{item.imgUrl}}" mode="widthFix" style="width:100%;"></image>
+        <image src='{{item.collected===true?"../../image/main/collected.png":"../../image/main/not-collected.png"}}' style="width:20px; height:20px;position:absolute;bottom:50px;right:10px"></image>
         <view style="width:98%;">
           <view>{{item.desc}}</view>
           <view style="color:#54CEC4; display:inline-block;">{{item.price}}</view>
@@ -145,4 +190,6 @@
   <!-- 底线 -->
   <view style="text-align:center;color:#54CEC4;font-size:14px;">------------呀！你碰到我的底线了----------</view>
   <!-- 底线end -->
+
+  <image src='../../image/main/back_to_top.png' class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>
 </view>
