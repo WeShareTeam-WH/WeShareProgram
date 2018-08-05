@@ -14,10 +14,32 @@
   margin-right: 9px;
 }
 
-.body-gallery navigator:last-child{
-  width:150px;
-}
+/* .body-gallery navigator:last-child{
+  width:30px;
+} */
+
 /* 清除时下热潮等子模块图片廊最后一张图片右边距 */
 .body-gallery navigator:last-child image{
   margin-right: 0px;
+}
+
+/* 设置为您推荐模块第一列的navigator的margin-right */
+#recommend .index-module-body navigator:nth-child(even){
+  margin-right: 0%;
+}
+
+/* 设置为您推荐模块第二列的navigator的margin-right */
+#recommend .index-module-body navigator:nth-child(odd){
+  margin-right: 2%;
+}
+
+/* 回到顶部按钮 */
+.goTop{
+  height: 80rpx;
+  width: 80rpx;
+  position: fixed;
+  bottom: 50rpx;
+  right: 30rpx;
+  opacity:0.8;
+  border-radius: 50%;
 }
