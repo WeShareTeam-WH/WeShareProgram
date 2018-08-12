@@ -1,2 +1,4 @@
 <!--pages/bag/bag.wxml-->
-<text>pages/bag/bag.wxml</text>
+<view>
+  <button bindtap='orderConfirm'>订单确认</button>
+</view>

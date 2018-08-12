@@ -1,0 +1,14 @@
+<view class='btn-group btn-group-radio'>
+  <!-- <view class='radio'>今天</view>
+      <view class='radio'>明天上午</view>
+      <view class='radio active'>明天下午</view>
+      <view class='radio'>明天晚上</view> -->
+  <label style='position:relative;' wx:for="{{deliveryTime}}">
+    <radio style="opacity:0; position:absolute;" checked="{{item.checked===true}}"></radio>
+    <view class="{{item.checked === true ? 'active':''}}" bindtap=''>{{item.content}}</view>
+  </label>
+  <!-- <label style='position:relative;'>
+    <radio style="opacity:0; position:absolute;">B</radio>
+    <view style="padding:0px 8px; display:inline-block; border:1px solid #ccc; color:white; background-color:#4ECDC4; border-color:#4ECDC4">明天上午</view>
+  </label> -->
+</view>

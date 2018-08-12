@@ -8,6 +8,10 @@ Page({
   
   },
 
+  orderConfirm:function(){
+    wx.navigateTo({ "url": "../order_confirm/order_confirm" })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

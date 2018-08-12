@@ -1,0 +1,41 @@
+.btn-group {
+  text-align: left;
+}
+
+.btn-group-radio {
+}
+
+.btn-group label view{
+  padding: 0px 8px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-right: none;
+}
+
+.btn-group label:first-child view{
+  border-radius: 5px 0px 0px 5px;
+}
+
+.btn-group label:last-child view{
+  border-radius: 0px 5px 5px 0px;
+  border-right: 1px solid #ccc;
+}
+.btn-group label view.active{
+  border:1px solid #4ECDC4;
+  background-color:#4ECDC4;
+  color:white;
+}
+
+.btn-group-radio .radio {
+  border: 1px solid #ccc;
+  margin-right: 5px;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 0px 5px;
+  color:rgba(26, 83, 92, 1);
+}
+
+.btn-group .radio.active{
+  color:#4ECDC4;
+  border: 2px solid#4ECDC4;
+}

@@ -1,1 +1,5 @@
-{}
+{
+  "usingComponents": {
+    "my-component": "../../custom_components/my_component"
+  }
+}
